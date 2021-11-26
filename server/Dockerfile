@@ -1,6 +1,5 @@
 FROM alpine
 
-#WORKDIR /app/
+WORKDIR /app/server
 
-#COPY openapi.yml .
 
