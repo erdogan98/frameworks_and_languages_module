@@ -6,8 +6,8 @@ const server = http.createServer((req,res)=> {
         res.end();
     }
 
-    if(req.url === '/item/user_id') {
-        res.write(JSON.stringify['user1234'])
+    if(req.url === '/item/') {
+        res.write(JSON.stringify['0'])
         res.end();
     }
 })
