@@ -1,5 +1,5 @@
-FROM alpine
+FROM node:latest
 
-WORKDIR /app/server
+WORKDIR /app/server/
 
 
