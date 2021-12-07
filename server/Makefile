@@ -10,7 +10,5 @@ install:
 	npm i joi@13.1.0
 
 run:
-	nodemon .
-
-test:
 	docker run --rm ${DOCKER_IMAGE}
+	nodemon .
