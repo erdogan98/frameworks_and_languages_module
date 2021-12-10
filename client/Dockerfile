@@ -1,1 +1,5 @@
-FROM alpine
+FROM node:latest
+
+WORKDIR /app/client/
+
+
