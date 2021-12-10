@@ -1,4 +1,4 @@
-# CLIENT SIDE For the 2nd assignment of the programming langiages and frameworks assignment
+# CLIENT SIDE For the 2nd assignment of the programming languages and frameworks assignment
 
 # Getting Started with Create React App
 
