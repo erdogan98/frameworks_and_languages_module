@@ -1,5 +1,11 @@
 FROM node:latest
 
-WORKDIR /app/server/
+WORKDIR /server/
 
+COPY package.json ./server
 
+RUN npm install
+
+COPY . .
+
+ENTRYPOINT ["node", "application.js"]

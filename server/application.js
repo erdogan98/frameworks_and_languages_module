@@ -2,7 +2,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
-//const items = require('./items.js');
+const cors = require('cors');
+const items = require('./items.js');
 const { request } = require('express');
 const PORT = 8000;
 /*
@@ -10,52 +11,55 @@ setup middleware that tell express.js to
 parse JSON before actual data hits 
 the function that is used here to handle the request
 */
-const items = {
-    id: 0,
-    user_id: "user1234",
-    keywords:[
-      "hammer",
-      "nails",
-      "tools"
-    ],
-    description: "A hammer and nails set",
-    image: "https://placekitten.com/200/300",
-    lat: 51.2798438,
-    lon: 1.0830275,
-    date_from: "2019-08-24T14:15:22Z",
-    date_to: "2019-08-24T14:15:22Z"
-    };
+var allow = {
+    
+    origin: '*',
+    methods: 'GET,OPTIONS,DELETE,POST',
+    allowedHeaders: 'Content-Type',
+    optionsSuccessStatus: 204
+
   
-      app.use(bodyParser.urlencoded({ extended: false }));
-      app.use(bodyParser.json());
-      app.use( express.json() );
+}
+app.options('/',cors(allow));
 
-
+//get req
 app.get('/', (req, res)=>{
+    res.send('ASSIGNMENT 2')
+    console.log('this is message');
+    res.status(200);
+    
+});
+
+app.post('/item/', (res,req)=>{
+    if(req.body){
+        res.status(201),json({status: 'ok'})
+    }
+   const newItem = {
+       id:items.length + 1,
+       user_id: req.user_id,
+       keywords:[req.body.keywords,
+        req.body.keywords,
+        req.body.keywords],
+       description: req.body.description,
+       image: req.body.image,
+       lat:req.body.lat,
+       lon: req.body.lon,
+       date_from: req.body.date_from,
+       date_to: req.body.date_to
+   }
+
+   items.push(newItem);
+   res.json(newItem)
+})
+app.use('/', (req, res)=>{
     console.log(res.header);
-     res.send('ASSIGNMENT 2')
-     console.log(res.header)
+
      res.send();
 
 })
 
-app.options('/',(req, res)=>{
-    res.status(204).send("ok");
-});
-app.use('/item/:itemId', (req, res, next) => {
-    console.log('Request Type: ', req.method)
-    next()
-  })
-
 //prints=> http://localhost:8000/item
 //req: incoming data, res:outgoing data
-
-
-//get req
-app.get('/item/', (req, res)=>{
-    res.status(200); 
-    return res.json(items);
-});
 
 app.get('/items/:itemId', (req, res) =>{
     {
