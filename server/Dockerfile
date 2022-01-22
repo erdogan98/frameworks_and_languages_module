@@ -4,8 +4,8 @@ WORKDIR /server/
 
 COPY package.json ./server
 
-RUN npm install
+RUN npm start
 
 COPY . .
 
-ENTRYPOINT ["node", "application.js"]
+ENTRYPOINT ["node", " app.js"]
