@@ -1,6 +1,13 @@
-FROM alpine
+FROM node
 
-#WORKDIR /app/
+WORKDIR /frameworks_and_languages_module/server/
 
-#COPY openapi.yml .
+COPY package*.json ./server
 
+COPY . .
+
+RUN npm install
+
+EXPOSE 8000
+
+CMD ["node", "index.js"]

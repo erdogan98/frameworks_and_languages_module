@@ -1,7 +1,7 @@
 DOCKER_IMAGE:=client
 
 build:
-	docker build --tag ${DOCKER_IMAGE} .
+	docker build -t ${DOCKER_IMAGE}:dev .
 
 test:
 	docker run --rm ${DOCKER_IMAGE}
