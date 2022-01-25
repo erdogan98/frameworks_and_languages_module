@@ -23,7 +23,7 @@ function Add() {
 
 
     const addItem = async (data) => {
-        const response = await axios.post('https://8000-calaldees-frameworksandl-5q5xcwr6p5x.ws-eu28.gitpod.io/item', data);
+        const response = await axios.post('https://8000-calaldees-frameworksandl-5q5xcwr6p5x.ws-eu29.gitpod.io/item', data);
         if (response.status === 200) {
             toast.success(response.data);
         }

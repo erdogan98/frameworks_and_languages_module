@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {useEffect, useState} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 //import Home from './Home';
@@ -56,16 +55,3 @@ const Header = () => {
 };
 
 export default Header;
-=======
-import React from 'react';
-import Progress from './Progress';
-
-const Header = () => (
-  <div>
-    <h1>FreeCycle</h1>
-    <Progress/>
-  </div>
-);
-
-export default Header;
->>>>>>> 5cbe577c1edc9e7563be3459bff27a06b62cac9b

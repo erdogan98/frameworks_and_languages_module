@@ -13,14 +13,14 @@ function Home() {
     }, []);
 
     async function getItems() {
-        const response = await axios.get("https://8000-calaldees-frameworksandl-5q5xcwr6p5x.ws-eu28.gitpod.io/items");
+        const response = await axios.get("https://8000-calaldees-frameworksandl-5q5xcwr6p5x.ws-eu29.gitpod.io/items");
         if (response.status === 200) {
             setData(response.data);
         }
     }
     async function onDeleteItem(id) {
         if (window.confirm("Would you like to delete this item ?")) {
-            const response = await axios.delete(`https://8000-calaldees-frameworksandl-5q5xcwr6p5x.ws-eu28.gitpod.io/item/${id}`);
+            const response = await axios.delete(`https://8000-calaldees-frameworksandl-5q5xcwr6p5x.ws-eu29.gitpod.io/item/${id}`);
             if (response.status === 200) {
                 //toast.success(response.data);
                 toast.success("Item deleted!")

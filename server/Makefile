@@ -10,10 +10,7 @@ install_local:
 	npm install express
 	npm i -g nodemon
 	npm install cors
-<<<<<<< HEAD
 	npm i install uuid
-=======
->>>>>>> 5cbe577c1edc9e7563be3459bff27a06b62cac9b
 
 run_local:
 	nodemon .
