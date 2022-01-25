@@ -1,8 +1,13 @@
 # Frameworks and Languages Module
 Stub framework for "Frameworks and Languages" module
 
+<<<<<<< HEAD
 * [GitPod IDE](https://gitpod.io/#https://github.com/calaldees/frameworks_and_languages_module)  - Online development environment
 	I made a change
+=======
+* [GitPod IDE](https://gitpod.io/#https://github.com/erdogan98/frameworks_and_languages_module) - Online development environment
+-- Change has been made
+>>>>>>> 5cbe577c1edc9e7563be3459bff27a06b62cac9b
 * [ReDoc OpenAPI](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/calaldees/frameworks_and_languages_module/main/openapi.yml)
 
 

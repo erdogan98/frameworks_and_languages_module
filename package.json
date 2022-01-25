@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@types/joi": "^17.2.3",
+    "supertest": "^6.1.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
