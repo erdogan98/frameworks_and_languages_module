@@ -1,18 +1,22 @@
-FROM node
+FROM node:13.12.0-alpine
 
-WORKDIR /workspace/frameworks_and_languages_module/client
+ENV NODE_ENV development
 
-ENV PATH /app/node_modules/.bin:$PATH
+WORKDIR /client
 
 COPY package*.json ./
-COPY package-lock.json ./
+COPY yarn.lock .
 
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
-RUN npm install
+RUN  npm install --force
 
-COPY . ./
+COPY . .
+
+RUN npm run build
 
 EXPOSE 3000
+
+
+
 # Command to run our app
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
+

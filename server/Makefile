@@ -10,7 +10,8 @@ install_local:
 	npm install express
 	npm i -g nodemon
 	npm install cors
-	npm i install uuid
+	npm i install 
+	npm i joi@13.1.0
 
 run_local:
 	nodemon .

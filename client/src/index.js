@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route path="/addItem" component={Add}/>
         <Route path="/view/:itemId" component={View}/>
-        <Route path="/about" component={About}/>
+
       </Switch>
       </div>
     </BrowserRouter>

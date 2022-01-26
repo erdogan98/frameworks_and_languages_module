@@ -1,6 +1,7 @@
 import {v4 as uuid} from "uuid";
 
-let items = [ ];
+
+let items = [];
 
 export const getItems = (req,res) => {
     res.status(200).json(items);
@@ -10,10 +11,11 @@ export const getItems = (req,res) => {
 export const createItem = (req,res) => {
     const item = req.body;
 
-    items.push({id:uuid(), ...item})
-    
+    if(item){
+    return res.status(405).json("Item cannot be created");
+    }
+    items.push({id:uuid, ...item})
     res.status(201).json("Item created successfully");
-
 };
 
 export const getItem = (req, res) =>{
@@ -30,6 +32,7 @@ export const deleteItem = (req, res) =>
     let index = items.findIndex((newItem) => {
          (newItem.id === req.query.itemId)
     })
+
     items.splice(index, 1)
     res.status(200).json({message:'Item deleted!'})
- }
+ };

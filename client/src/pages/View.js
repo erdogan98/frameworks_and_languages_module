@@ -15,7 +15,7 @@ const View = () => {
     }, [id]);
 
     const getSingleItem = async (id) => {
-        const response = await axios.get(`https://8000-calaldees-frameworksandl-5q5xcwr6p5x.ws-eu28.gitpod.io/item/${id}`)
+        const response = await axios.get(`https://localhost:8000/item/${id}`)
         if (response.status === 200 ) {
             setItem({...response.data[0]})
         }
@@ -28,9 +28,33 @@ const View = () => {
                 </div>
                 <div className='box'>
                     <strong>ID: </strong>
-                    <strong>{item.id}</strong>
-                    <br>
-                    </br>
+                    <span>{id}</span>
+                    <br />
+                    <br />
+                    <strong>User ID: </strong>
+                    <span>{item && item.user_id}</span>
+                    <br />
+                    <br />
+                    <strong>Keyword: </strong>
+                    <span>{item && item.keywords}</span>
+                    <br />
+                    <br />
+                    <strong>Description: </strong>
+                    <span>{item && item.description}</span>
+                    <br />
+                    <br />
+                    <strong>Image: </strong>
+                    <span>{item && item.image}</span>
+                    <br />
+                    <br />
+                    <strong>Latitude: </strong>
+                    <span>{item && item.lat}</span>
+                    <br />
+                    <br />
+                    <strong>Longitude </strong>
+                    <span>{item && item.lon}</span>
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
